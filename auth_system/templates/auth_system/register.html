@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">//use static folder
+</head>
+<body>
+    <h1>Register</h1>
+    <div class="form">
+        <form method="POST" action="">
+            {% csrf_token %}<!-- need it to avoid a error -->
+            <label for="fname">First Name :</label>
+            <input type="text" placeholder="First Name" name="fname">
+            <br>
+            <label for="sname">Last Name :</label>
+            <input type="text" placeholder="Last Name" name="sname">
+            <br>
+            <label for="uname">User Name :</label>
+            <input type="text" placeholder="User Name" name="uname">
+            <br>
+            <label for="email">First Name :</label>
+            <input type="email" placeholder="Email" name="email">
+            <br>
+            <label for="pass">First Name :</label>
+            <input type="password" placeholder="Password" name="pass">
+            <br>
+            <button type="submit">Submit</button>
+            <p>already have an account ?<a href="{% url 'login-page' %}">Login</a></p>
+        </form>
+    </div>
+</body>
+</html>
